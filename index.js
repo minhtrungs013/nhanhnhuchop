@@ -8,15 +8,16 @@ let time = ''
 
 function start() {
   playerName = prompt("Please enter your name:");
-  if (playerName !== '') {
-    document.getElementById('playerName').innerText = playerName;
-    startCountdown()
+  if (playerName === '' || playerName === null || playerName === 'null') {
+    return
   }
+  document.getElementById('playerName').innerText = playerName;
+  startCountdown()
 }
 
 
 function updateScore() {
-  if (!playerName || playerName.trim().length === 0) {
+  if (playerName === '' || playerName === null || playerName === 'null') {
     alert("Vui lòng chọn bắt đầu");
   }
   document.getElementById('scoreValue').innerText = score;
@@ -28,7 +29,7 @@ function updateHighScore() {
 }
 
 function upScore() {
-  if (playerName === '') {
+  if (playerName === '' || playerName === null || playerName === 'null') {
     alert("Vui lòng chọn bắt đầu");
     return
   }
@@ -51,7 +52,7 @@ function upScore() {
 }
 
 function downScore() {
-  if (playerName === '') {
+  if (playerName === '' || playerName === null || playerName === 'null') {
     alert("Vui lòng chọn bắt đầu");
     return
   }
@@ -61,7 +62,7 @@ function downScore() {
 }
 
 function refreshScore() {
-  if (playerName !== '') {
+  if (playerName !== '' || playerName !== null || playerName !== 'null') {
     saveToLeaderboard(playerName, highestScore, time);
   }
   score = 1;
@@ -69,7 +70,7 @@ function refreshScore() {
   highestScore = 1;
   updateScore();
   updateHighScore();
-  if (playerName !== '') {
+  if (playerName !== '' || playerName !== null || playerName !== 'null') {
     displayRankTable();
     resetCountdown()
     playerName = ''
@@ -106,7 +107,6 @@ function resetRankTable() {
   displayRankTable();
   score = 1;
   hideAllItems(9);
-  updateScore();
 }
 
 function showItem() {

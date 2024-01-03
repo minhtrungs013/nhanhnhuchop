@@ -13,15 +13,27 @@
       font-weight: bold;
       color: #333;
     }
+
+    #fullscreenOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+    }
   </style>
 </head>
 
 <body>
+
   <div class="grid bg">
     <h1></h1>
     <div class="row">
       <div class="col l-3">
-        <ul class="list" >
+        <ul class="list">
           <li class="item">10
           </li>
           <li class="item">9
@@ -88,8 +100,9 @@
       </div>
       <div class="col l-5">
         <div>
-          <img src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704254019/rcaionuujtsmloeunbxv.png" alt="" class="img_logo">
-          <h2 class="heading" style="margin: 0px; text-shadow: 1px 1px 1px #498F8D;">BẢNG XẾP HẠNG</h2>
+          <img src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704254019/rcaionuujtsmloeunbxv.png" alt=""
+            class="img_logo">
+          <h2 class="heading">BẢNG XẾP HẠNG</h2>
           <ol id="rankElement"></ol>
         </div>
         <div style="
@@ -110,6 +123,26 @@
       </div>
     </div>
   </div>
+  <!-- <script>
+    const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+
+    document.addEventListener('mouseout', handleMouseOut);
+
+    function handleMouseOut(event) {
+      // Kiểm tra xem chuột có rời khỏi phía trên của màn hình hay không
+      console.log(event.clientY);
+      if (event.clientY <= 0) {
+        // Chuột rời khỏi phía trên màn hình, hiển thị overlay màu đen
+        fullscreenOverlay.style.opacity = '0';
+        fullscreenOverlay.style.pointerEvents = 'auto';
+      } else {
+        fullscreenOverlay.style.opacity = '1';
+        fullscreenOverlay.style.pointerEvents = 'none';
+        // Chuột rời khỏi các phía khác của màn hình, ẩn overlay
+      }
+
+    }
+  </script> -->
   <script>
     showItem();  
   </script>
