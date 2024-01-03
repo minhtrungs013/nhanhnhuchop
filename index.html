@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="grid.css">
+  <title>Nhanh Như Chớp</title>
+  <style>
+    #countdown {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid bg">
+    <h1></h1>
+    <div class="row">
+      <div class="col l-3">
+        <ul class="list" >
+          <li class="item">10
+          </li>
+          <li class="item">9
+            <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img>
+          </li>
+          <li class="item">8
+            <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img> <img
+              class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img>
+          </li>
+          <li class="item">7 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img></li>
+          <li class="item">6 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img></li>
+          <li class="item">5 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img></li>
+          <li class="item">4 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img></li>
+          <li class="item">3 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img></li>
+          <li class="item">2 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img></li>
+          <li class="item">1 <img class="als"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img>
+            <img class="als1"
+              src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704188882/v3vcwphqblqoznbc2uwr.png"></img>
+          </li>
+          <li class="item1">
+          </li>
+        </ul>
+      </div>
+      <div class="col l-4 ">
+        <div class="row">
+          <div class="col l-12">
+            <div class="clock">
+              <img src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704191578/s9osywl417lh96aiajls.png" alt=""
+                class="img">
+              <div class="clock2"></div>
+              <div id="countdown" class="clock1">
+                START
+              </div>
+            </div>
+            <button onclick="start()" class="btn_start">BẮT ĐẦU</button>
+          </div>
+          <div class="col l-12 score__cls">
+            <div id="highestScore" class="highestScore">ĐIỂM CAO NHẤT: <span id="highScoreValue"
+                class="textName">1</span></div>
+            <div id="score" class="score">ĐIỂM HIỆN TẠI: <span id="scoreValue" class="textName">1</span></div>
+            <div class="score">TÊN ĐỘI: <span id="playerName" class="textName">team</span></div>
+          </div>
+          <div class="col l-12">
+            <div class="btn-option">
+              <button onclick="upScore()" class="btn_">Lên</button>
+              <button onclick="downScore()" class="btn_">Xuống</button>
+              <button onclick="refreshScore()" class="btn_">Làm mới</button>
+            </div>
+          </div>
+          <div class="col l-12">
+            <button onclick="resetRankTable()" class="btn_" style="margin-bottom: 50px;">Làm mới BXH</button>
+          </div>
+        </div>
+      </div>
+      <div class="col l-5">
+        <div>
+          <img src="https://res.cloudinary.com/dax8xvyhi/image/upload/v1704254019/rcaionuujtsmloeunbxv.png" alt="" class="img_logo">
+          <h2 class="heading" style="margin: 0px; text-shadow: 1px 1px 1px #498F8D;">BẢNG XẾP HẠNG</h2>
+          <ol id="rankElement"></ol>
+        </div>
+        <div style="
+        align-items: center;
+        display: flex;
+        justify-content: center; ">
+          <table aria-describedby="DC4 Ext" id="rankTable" style="border-radius: 28px; overflow: hidden;">
+            <thead class="table">
+              <tr class="table_body">
+                <th class="title">Tên</th>
+                <th class="title">Điểm cao nhất</th>
+                <th class="title">Thời gian hoàn thành</th>
+              </tr>
+            </thead>
+            <tbody id="dataRank" class="table_item"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    showItem();  
+  </script>
+  <!-- <script src="countdown.js"></script> -->
+  <script src="index.js"></script>
+</body>
+
+</html>
