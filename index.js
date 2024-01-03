@@ -62,7 +62,7 @@ function downScore() {
 }
 
 function refreshScore() {
-  if (playerName !== '' || playerName !== null || playerName !== 'null') {
+  if (playerName !== '') {
     saveToLeaderboard(playerName, highestScore, time);
   }
   score = 1;
@@ -70,7 +70,7 @@ function refreshScore() {
   highestScore = 1;
   updateScore();
   updateHighScore();
-  if (playerName !== '' || playerName !== null || playerName !== 'null') {
+  if (playerName !== '') {
     displayRankTable();
     resetCountdown()
     playerName = ''
