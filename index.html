@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="./Mii Channel Music - VGR Remix.mp3">
+
   <title>Nhanh Như Chớp</title>
   <style>
     #countdown {
@@ -79,6 +81,10 @@
               </div>
             </div>
             <button onclick="start()" class="btn_start">BẮT ĐẦU</button>
+            <audio id="myAudio" controls style="display: none;">
+              <source src="./Mii Channel Music - VGR Remix.mp3" type="audio/mpeg">
+              </source>
+            </audio>
           </div>
           <div class="col l-12 score__cls">
             <div id="highestScore" class="highestScore">ĐIỂM CAO NHẤT: <span id="highScoreValue"
@@ -123,6 +129,31 @@
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const audio = document.getElementById('myAudio');
+      // Bắt sự kiện mousedown để kích thích autoplay
+      document.addEventListener('mousedown', function () {
+        playAudio();
+      });
+      // Bắt sự kiện ended để tự động phát lại
+      audio.addEventListener('ended', function () {
+        replayAudio();
+      });
+
+      // Hàm chạy nhạc
+      function playAudio() {
+        audio.play();
+        // Loại bỏ sự kiện mousedown sau khi đã kích thích autoplay
+        document.removeEventListener('mousedown', playAudio);
+      }
+      // Hàm chạy lại nhạc từ đầu
+      function replayAudio() {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    });
+  </script>
   <!-- <script>
     const fullscreenOverlay = document.getElementById('fullscreenOverlay');
 
@@ -143,9 +174,6 @@
 
     }
   </script> -->
-  <script>
-    showItem();  
-  </script>
   <!-- <script src="countdown.js"></script> -->
   <script src="index.js"></script>
 </body>

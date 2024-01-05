@@ -13,8 +13,22 @@ function start() {
   }
   document.getElementById('playerName').innerText = playerName;
   startCountdown()
+
 }
 
+// function playAudio() {
+//   const audio = document.getElementById('myAudio');
+//   console.log("ádasdasd");
+//   audio.play();
+//   // if (audio.paused) {
+//   //   audio.play();
+//   // } else {
+//   //   audio.pause();
+//   //   audio.currentTime = 0; 
+//   // }
+// }
+
+// playAudio()
 
 function updateScore() {
   if (playerName === '' || playerName === null || playerName === 'null') {
@@ -73,6 +87,7 @@ function refreshScore() {
   if (playerName !== '') {
     displayRankTable();
     resetCountdown()
+  
     playerName = ''
   }
 }
